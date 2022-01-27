@@ -1,0 +1,33 @@
+{
+	"folders": {},
+	"connections": {
+		"mariaDB-17e7003ad53-65239966fe4d618b": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "song",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3307",
+				"database": "song",
+				"url": "jdbc:mysql://localhost:3307/song",
+				"home": "mysql_client",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

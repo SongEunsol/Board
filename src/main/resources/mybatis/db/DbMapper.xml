@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nineone.board.mapper.db.DbMapper">
+
+    <select id="boardList" resultType="DbEntity">
+        SELECT BNO, BWRITER, BTITLE, BCONTENT, BREGDATE FROM BOARD
+        ORDER BY BNO DESC
+    </select>
+    
+    <insert id="insertBoard" parameterType="DbEntity">
+        INSERT INTO BOARD(BWRITER, BPASSWORD, BTITLE, BCONTENT) VALUES (#{bwriter}, #{bpassword}, #{btitle}, #{bcontent});
+    </insert>
+    
+    <update id="updateBoardById" parameterType="DbEntity">
+    	UPDATE BOARD
+    		SET
+    			BWRITER = #{bwriter},
+    			BTITLE = #{btitle},
+    			BCONTENT = #{bcontent}
+    		WHERE BNO = #{bno}
+    </update>
+
+    <delete id="deleteBoardById" parameterType="int">
+        DELETE FROM BOARD WHERE BNO = #{bno}
+    </delete>
+    
+    <select id="boardPwdChk" resultType="int">
+    	SELECT COUNT(*) FROM BOARD
+    	WHERE BNO = #{bno}
+    	AND BPASSWORD = #{bpassword}
+    </select>
+</mapper>

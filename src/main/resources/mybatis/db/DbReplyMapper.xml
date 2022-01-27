@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nineone.board.mapper.db.DbReplyMapper">
+
+    <select id="replyList" resultType="DbReplyEntity">
+        SELECT RNO, RWRITER, RCONTENT, RREGDATE FROM REPLY
+        WHERE BNO = #{bno}
+        ORDER BY RNO ASC
+    </select>
+    
+    <insert id="insertDB" parameterType="DbReplyEntity">
+        INSERT INTO BOARD(WRITER, PASSWORD, TITLE, CONTENT) VALUES (#{writer}, #{password}, #{title}, #{content});
+    </insert>
+    
+    <update id="updateById" parameterType="DbReplyEntity">
+    	UPDATE BOARD
+    		SET
+    			WRITER = #{writer},
+    			PASSWORD = #{password},
+    			TITLE = #{title},
+    			CONTENT = #{content}
+    		WHERE NO = #{no}
+    </update>
+
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM BOARD WHERE NO = #{no}
+    </delete>
+    
+    <select id="pwdChk" resultType="int">
+    	SELECT COUNT(*) FROM BOARD
+    	WHERE NO = #{no}
+    	AND PASSWORD = #{password}
+    </select>
+</mapper>

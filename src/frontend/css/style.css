@@ -1,0 +1,121 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+body {
+    padding: 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.center {
+    margin: auto;
+    width: 550px;
+    padding: 10px;
+    position: inherit;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.board-write {
+    margin: auto 30px;
+}
+
+.board-list-wrap {
+    margin: 10px;
+}
+.info-wrap {
+    display: flex;
+}
+.number {
+    width: 30%;
+    text-align: left;
+}
+.date {
+    width: 70%;
+    text-align: right;
+}
+
+.board-list {
+    cursor: pointer;
+    width: 100%;
+    border: solid 2px rgb(211, 211, 211);
+    border-style: solid solid dashed solid;
+    padding: 10px 20px;
+}
+
+.board-list:hover {
+    box-shadow: 0 0 5px rgb(204, 204, 204);
+}
+
+.board-view {
+    border: solid 2px rgb(211, 211, 211);
+    border-top: 0;
+    padding: 1rem 1.5rem;
+}
+
+.title {
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.control-wrap {
+    width: 30%;
+    text-align: right;
+}
+
+.date,
+.control,
+.control>button {
+    color: rgb(177, 177, 177);
+}
+
+.writer {
+    width: 30%;
+    text-align: right;
+}
+
+.control-wrap > .writer {
+    line-height: 3.3rem;
+}
+
+.control {
+    text-align: right;
+}
+
+.content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    word-break: break-all;
+    font-size: 1.1rem;
+    text-align: left;
+    line-height: 1.5;
+    margin-bottom: 10px !important;
+    color: #495057;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.control>button {
+    color: gray;
+    border: none;
+    margin: 0 2px;
+}
+
+.title>input {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.writer>input {
+    display: inherit;
+    width: 100px;
+}
